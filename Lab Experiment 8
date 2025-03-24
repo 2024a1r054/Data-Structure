@@ -63,6 +63,81 @@ void insertAtAnyPos(int ele, int pos){
  }
 }
 
+void deleteNodeFromBeg(){
+    if(head==NULL)
+    printf("List is empty!!!\n");
+    else{
+        Node* temp=head;
+        head=head ->next;
+        free(temp); 
+        printf("Node Deleted!!!\n");
+    }
+}
+
+void deleteNodeFromEnd(){
+if(head==NULL)
+printf("List is empty!!!\n");
+
+else{
+    Node* t;
+    if(head -> next ==NULL){    //this will be the case if their is only 1 node
+        t=head;
+        head=NULL;
+    }
+else{
+    Node* temp= head;
+    while(temp ->next -> next !=NULL){      //check kr rhe hain ki last node null hai ya nahi
+        temp=temp ->next;
+    }
+     t= temp -> next;    //node ka address t pointer ko dia
+    temp -> next =NULL;
+   }
+      free (t);     
+       printf("Node Deleted!!!\n");    
+}
+}
+
+void deleteNodeFromAnyPos(int pos){
+if(head==NULL)
+printf("List is empty!!!\n");
+else if(pos==1)
+deleteNodeFromBeg();
+else{
+    Node* temp = head;
+    int i=1;
+    while(i<pos-1 && temp -> next !=NULL){
+        i++;
+        temp=temp ->next;
+    }
+    if(temp -> next !=NULL && pos>0){
+        Node *t= temp -> next;
+        temp -> next =temp -> next ->next;
+        free(t);
+        printf("Node Deleted!!!\n");
+    }
+    else
+    printf("Invalid Position!!!\n");
+}
+}
+
+void search(int target)
+{
+if(head==NULL)
+printf("List is empty!!!\n");
+else{
+    Node* temp=head;
+    while(temp!=NULL){
+        if(temp ->data =target){
+            printf("Found!!!\n");
+            return;
+        }
+        temp=temp ->next;
+    }
+    printf("Not Found!!!\n");
+}
+}
+
+
 void display(){
     if(head==NULL)
     printf("List is empty!!!\n");
@@ -103,7 +178,7 @@ void display(){
             break;
 
             case 3: 
-            printf("Ente Value: ");
+            printf("Enter Value: ");
             scanf("%d",&value);
             printf("Enter Position: ");
             scanf("%d",&pos);
@@ -114,6 +189,7 @@ void display(){
             break;
 
             case 5:
+            deleteNodeFromEnd();
             break;
 
             case 6:
