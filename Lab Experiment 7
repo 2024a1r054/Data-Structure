@@ -86,7 +86,7 @@ else{
     }
 else{
     Node* temp= head;
-    while(temp ->next -> next !=NULL){      //check kr rhe hain ki last node null hai ya nahi
+    while(temp ->next -> next !=NULL){              //check kr rhe hain ki last node null hai ya nahi
         temp=temp ->next;
     }
      t= temp -> next;    //node ka address t pointer ko dia
@@ -141,7 +141,7 @@ else{
 void display(){
     if(head==NULL)
     printf("List is empty!!!\n");
-    else{               //display deletion seaerching ke liye traversing karni padegi
+    else{                           //display deletion seaerching ke liye traversing karni padegi
         Node* temp =head;
         while(temp != NULL){
             printf("  %d", temp -> data);
@@ -165,7 +165,8 @@ void display(){
         printf("Enter Choice: ");
         scanf("%d",&choice);
         switch(choice){
-            case 1:             //
+
+            case 1:             
             printf("Enter Value: ");
             scanf("%d",&value);
             insertNodeInBeg(value);
@@ -185,29 +186,38 @@ void display(){
             insertAtAnyPos(value,pos);
             break;
 
+
             case 4:
             break;
+
 
             case 5:
             deleteNodeFromEnd();
             break;
 
+
             case 6:
             break;
+
 
             case 7:
             break;
 
+
             case 8:
             break;
+
 
             case 9:
             display();
             break;
 
+
+
             case 10:
             exit(0);
-            
+
+
             default:
             printf("Invalid Choice!!!\n");
         }
