@@ -138,6 +138,8 @@ else{
 }
 
 
+
+
 void display(){
     if(head==NULL)
     printf("List is empty!!!\n");
@@ -157,7 +159,7 @@ void display(){
         printf("4.Delete Node From Beginning\n");
         printf("5.Delete Node From End\n");
         printf("6.Delete Node From Any Position\n");
-        printf("7.Search Eleemnt In Linked List\n");
+        printf("7.Search Element In Linked List\n");
         printf("8.Sort Elements\n");
         printf("9.Display List\n");
         printf("10.Exit\n");
