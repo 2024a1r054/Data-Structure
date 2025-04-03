@@ -137,7 +137,21 @@ else{
 }
 }
 
-
+void sort(){
+Node *last = NULL;
+for(Node* i=head; i ->next != NULL; i= i ->next){
+Node *j;
+for(Node* j= head; j ->next !=last; j=j ->next)
+{
+if(j -> data > j -> next -> data){
+int temp= j ->data;
+j-> data = j -> next -> data;
+j -> next -> data = temp;
+}
+}
+last=j;
+}
+}
 
 
 void display(){
