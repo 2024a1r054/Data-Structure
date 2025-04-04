@@ -204,6 +204,7 @@ void display(){
 
 
             case 4:
+            deleteNodeFromBeg();
             break;
 
 
@@ -213,14 +214,21 @@ void display(){
 
 
             case 6:
+            printf("Enter Position: ");
+            scanf("%d",&pos);
+            deleteNodeFromAnyPos(pos);
             break;
 
 
             case 7:
+            printf("Enter Value: ");
+            scanf("%d",&value);
+            search(value);
             break;
 
 
             case 8:
+            sort();
             break;
 
 
@@ -237,6 +245,7 @@ void display(){
             default:
             printf("Invalid Choice!!!\n");
         }
+printf("/n");
     }
     return 0;
 }
