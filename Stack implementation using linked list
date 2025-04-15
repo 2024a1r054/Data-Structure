@@ -1,0 +1,51 @@
+//Stack implementation using linked list    (We are making a dynamic stack)  
+//Stack ko homogenous ki jagah heterogenous type ka bhi bana sakte hain.
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+struct Node* top=NULL;
+void push(int value){     //push krne ka algo same as insert in the beginning of linked list.
+struct Node *temp =(struct Node*)malloc (sizeof(struct Node));
+
+if(temp==NULL)      //memory allocation unsuccessful.
+printf("Stack Overflow!!!\n");   
+else{
+    temp -> data=value;     //L.L ka head becomes stack ka top.
+    temp ->data=top;
+    top =temp;
+    printf("Element %d pushed in the stack!!\n",value);     //temp becomes new top of the particular stack
+}
+}                        
+
+int main(){
+    while(1){
+        printf("1.Push\n");
+        printf("2.Pop\n");
+        printf("3.Peek\n");
+        printf("4.Display\n");
+        printf("5.Exit\n");
+        int choice;
+        printf("Enter Choice: ");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1:
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+            case 4:
+            break;
+            case 5:
+            exit(0);
+            default:
+            printf("Invalid Choice!!!\n");
+        }
+    }
+}
